@@ -23,6 +23,7 @@ import {ButtonGroup, ButtonIcon} from "views/components/buttons";
 import * as Buttons from "views/components/buttons/index";
 import {CollapsiblePanel} from "views/components/collapsible_panel";
 import {Draggable} from "views/components/draggable_row";
+import {DraggableLib} from "views/components/draggable_with_library";
 import {Ellipsize} from "views/components/ellipsize";
 import {FlashMessage, MessageType} from "views/components/flash_message";
 import {AutocompleteField, SuggestionProvider} from "views/components/forms/autocomplete";
@@ -61,6 +62,7 @@ const switchStream: Stream<boolean> = stream(false);
 const reallyLongText                = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
 const draggableList = stream(["foo", "bar", "baz", "tez"]);
+const draggableList1 = stream(["foo", "bar", "baz", "tez"]);
 
 export class KitchenSink extends MithrilViewComponent<null> {
   provider: DynamicSuggestionProvider = new DynamicSuggestionProvider(type);
@@ -298,6 +300,10 @@ export class KitchenSink extends MithrilViewComponent<null> {
         <br/>
         <h3>Draggable component</h3>
         <Draggable dataItems={draggableList}/>
+
+        <br/>
+        <h3>Draggable Library component</h3>
+        <DraggableLib dataItems={draggableList1}/>
       </div>
     );
   }
