@@ -519,7 +519,7 @@ public class AgentServiceIntegrationTest {
         void shouldReturn404WhenAgentToBeDeletedDoesNotExist() {
             String unknownUUID = "unknown-agent-id";
             RecordNotFoundException e = assertThrows(RecordNotFoundException.class, () -> agentService.deleteAgents(singletonList(unknownUUID)));
-            assertThat(e.getMessage(), is("Agent with uuid 'unknown-agent-id' was not found!"));
+            assertThat(e.getMessage(), is("Agent with uuid [unknown-agent-id] was not found!"));
         }
 
         @Test
